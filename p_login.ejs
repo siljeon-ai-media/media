@@ -1,0 +1,24 @@
+<%- include('partials/head') %>
+<div class="login-hero">
+  <div class="big">AI 직원, <b>출근</b>시킵니다.</div>
+  <p class="muted">4주 · 미션 20개 · 제출하고 승인받으면 다음 미션이 열립니다.</p>
+</div>
+<div class="card">
+  <h2>로그인</h2>
+  <% if (error) { %><div class="error-box"><%= error %></div><% } %>
+  <form method="post" action="/login" data-once>
+    <label for="nickname">닉네임</label>
+    <input type="text" id="nickname" name="nickname" placeholder="예: ㅇㅇ네일/<%= COHORT %>" autocomplete="username" required autofocus>
+    <div class="help">가입할 때 만든 <b>업체명/<%= COHORT %></b> 형식이에요.</div>
+    <label for="password">비밀번호</label>
+    <input type="password" id="password" name="password" autocomplete="current-password" required>
+    <div class="mt"><button class="btn block" type="submit">입장하기</button></div>
+  </form>
+</div>
+<div class="card">
+  <h3>처음이신가요?</h3>
+  <p class="muted small">구매 후 받으신 입장 코드(<span class="kbd">SJ1-XXXX</span>)로 계정을 만드세요. 코드 1개 = 계정 1개.</p>
+  <a class="btn ghost block" href="/signup">입장 코드로 가입하기</a>
+</div>
+<p class="center small muted">비밀번호를 잊으셨나요? <%= CONTACT %>으로 닉네임과 함께 알려주세요.</p>
+<%- include('partials/foot') %>

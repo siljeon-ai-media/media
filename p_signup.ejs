@@ -1,0 +1,27 @@
+<%- include('partials/head') %>
+<h1>입장 코드로 가입</h1>
+<div class="card">
+  <% if (error) { %><div class="error-box"><%= error %></div><% } %>
+  <form method="post" action="/signup" data-once>
+    <label for="code">입장 코드</label>
+    <input type="text" id="code" name="code" value="<%= form.code || code %>" placeholder="SJ1-XXXX" autocapitalize="characters" autocomplete="off" required style="font-family: var(--mono); letter-spacing: 0.08em;">
+    <div class="help">구매 후 받은 파일에 적힌 코드예요. 대소문자는 상관없어요.</div>
+
+    <label for="company">업체명 (또는 이름)</label>
+    <input type="text" id="company" name="company" value="<%= form.company || '' %>" placeholder="예: ㅇㅇ네일" maxlength="20" required>
+    <div class="help">닉네임은 <b>업체명/<%= COHORT %></b> 형태로 만들어져요. (예: ㅇㅇ네일/<%= COHORT %>) 운영자와 다른 수강생에게 이 이름으로 보입니다.</div>
+
+    <label for="password">비밀번호 (6자 이상)</label>
+    <input type="password" id="password" name="password" minlength="6" autocomplete="new-password" required>
+    <label for="password2">비밀번호 확인</label>
+    <input type="password" id="password2" name="password2" minlength="6" autocomplete="new-password" required>
+
+    <label for="cheer">4주 뒤의 나에게 한 줄 (선택)</label>
+    <input type="text" id="cheer" name="cheer" value="<%= form.cheer || '' %>" maxlength="100" placeholder="예: 아침에 광고 숫자 보러 안 들어가는 사람이 되자">
+    <div class="help">대시보드에 응원 메시지로 가끔 다시 보여드려요.</div>
+
+    <div class="mt"><button class="btn block" type="submit">계정 만들기</button></div>
+  </form>
+</div>
+<p class="center small muted">이미 계정이 있으면 <a href="/login">로그인</a></p>
+<%- include('partials/foot') %>
