@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#FAFAF8">
+  <title><%= title ? title + ' · ' : '' %>실전 AI 챌린지</title>
+  <link rel="stylesheet" href="/public/style.css?v=3">
+</head>
+<body class="<%= typeof bodyClass !== 'undefined' ? bodyClass : '' %>">
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="<%= isAdmin && !currentUser ? '/admin' : '/' %>">
+      <span class="brand-mark">실전</span><span class="brand-cursor">_</span>
+      <span class="brand-sub">AI 직원 출근 · <%= COHORT %></span>
+    </a>
+    <nav class="nav">
+      <% if (isAdmin && (typeof adminNav !== 'undefined' ? adminNav : !currentUser)) { %>
+        <a href="/admin">홈</a>
+        <a href="/admin/queue">대기열</a>
+        <a href="/admin/users">수강생</a>
+        <a href="/admin/codes">코드</a>
+        <a href="/admin/missions">미션</a>
+        <form method="post" action="/admin/logout" class="inline"><button class="linklike" type="submit">로그아웃</button></form>
+      <% } else if (currentUser) { %>
+        <a href="/">대시보드</a>
+        <% if (isAdmin) { %><a href="/admin">관리자</a><% } %>
+        <form method="post" action="/logout" class="inline"><button class="linklike" type="submit">로그아웃</button></form>
+      <% } else { %>
+        <a href="/login">로그인</a>
+      <% } %>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<% if (flash) { %>
+  <div class="flash flash-<%= flash.type %>" role="status"><%= flash.text %></div>
+<% } %>
