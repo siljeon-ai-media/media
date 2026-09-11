@@ -17,6 +17,9 @@ h1{font-size:26px;line-height:1.25;word-break:keep-all;margin-bottom:12px}
 .copy.done{background:#2a2a2a;color:#34E27A}
 .note{margin-top:18px;padding:14px 16px;border-left:3px solid #34E27A;background:#161c18;border-radius:0 10px 10px 0;font-size:14px;color:#D8D8D5;word-break:keep-all}
 .note b{color:#F2F2F2}
+.next{margin-top:14px;padding:14px 16px;border-radius:10px;background:#1B1B1B;border:1px solid #2A2A2A;font-size:14px;color:#D8D8D5;word-break:keep-all}
+.next b{color:#34E27A}.next a{color:#34E27A;text-decoration:none;font-weight:800}
+.follow{display:block;margin-top:12px;padding:13px;border-radius:10px;border:1px solid #34E27A;color:#34E27A;text-align:center;text-decoration:none;font-weight:800;font-size:15px}
 .limit{margin-top:12px;font-size:14px;color:#A8A8A5;word-break:keep-all}
 .limit b{color:#FFD23F}
 .list{display:flex;flex-direction:column;gap:12px;margin-top:8px}
@@ -52,7 +55,9 @@ h1{font-size:26px;line-height:1.25;word-break:keep-all;margin-bottom:12px}
 - 뻔한 것(운영시간·위치 안내 등)은 2개 이하
 - "저장하고 싶다 / 친구한테 보내고 싶다"가 되는 정보성·공감성 소재 위주
 - 우리 업종·고객에 진짜 맞게 (일반론 금지)</pre><button class="copy" data-for="p1">프롬프트 복사하기</button></div>
+<div class="next"><b>돌려보셨나요?</b> 나온 표를 <a href="https://www.instagram.com/siljeon.ai/">@siljeon.ai</a> DM으로 보내주시면 다음 편에서 다뤄요. 잘 안 됐어도 보내주세요 — 그게 더 좋은 편이 됩니다.</div>
 <div class="note"><b>쓰는 법</b> · [ ] 안만 우리 업종·상황으로 바꾸고, 클로드나 챗GPT 대화창에 붙여넣으면 끝. 칸 3개(업종·고객·알리고 싶은 것)+말투만 바꾸면 업종 상관없이 재사용돼요.</div>
 <p class="limit"><b>한계 한 줄</b> · 10개 중 2~3개는 늘 뻔하게 나와요. 그건 버리고 7개만 쓰는 게 정상입니다.</p>
+<a class="follow" href="https://www.instagram.com/siljeon.ai/">다음 편 프롬프트 놓치지 않기 — @siljeon.ai 팔로우</a>
 <div class="more"><h2>다른 편 프롬프트</h2><div class="list"><a class="card" href="prompt-ep2.html"><div class="k">2편 · 광고 결과표 → 오늘 할 일</div><div class="t">광고 결과표 붙여넣으면 사람 말로 해석</div></a><a class="card" href="prompt-ep3.html"><div class="k">3편 · 경쟁사 인스타 3곳 → 표 한 장</div><div class="t">경쟁사 정찰, 하나씩 안 들어가도 됩니다</div></a></div></div>
 <script>document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const t=document.getElementById(b.dataset.for).innerText;try{await navigator.clipboard.writeText(t)}catch(e){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove()}b.textContent='복사됐어요 ✓ 클로드·챗GPT에 붙여넣으세요';b.classList.add('done');setTimeout(()=>{b.textContent='프롬프트 복사하기';b.classList.remove('done')},2500)}))</script><div class="foot">DM으로 프롬프트를 못 받으셨어도 이 페이지에서 언제든 복사할 수 있어요. 새 편이 올라올 때마다 여기에 쌓입니다. · <a href="https://www.instagram.com/siljeon.ai/">@siljeon.ai</a></div></div><div class="bar"></div></body></html>
