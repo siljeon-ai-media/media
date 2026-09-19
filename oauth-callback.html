@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로그인 완료 — 실전 AI (siljeon.ai)</title>
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic",sans-serif;max-width:640px;margin:64px auto;padding:0 20px;line-height:1.7;color:#222;background:#fff}
+  h1{font-size:22px}
+  .box{background:#f4f4f4;border:1px solid #ddd;border-radius:8px;padding:16px;word-break:break-all;font-family:monospace;font-size:14px;margin:16px 0}
+  .muted{color:#666;font-size:14px}
+  .warn{color:#b00;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>인증이 완료됐습니다</h1>
+<p>이 화면은 실전 AI(siljeon.ai) 인스타그램·스레드 자동 게시 도구가 로그인 인증을 받기 위한 내부 페이지입니다. 아래 값을 로디(클로드 코드)에게 전달하면 자동 게시용 접속 정보(토큰)로 바뀝니다.</p>
+<p class="muted">code 값:</p>
+<div class="box" id="code">(주소에 code= 값이 없습니다 — 인증이 정상적으로 안 된 것일 수 있습니다)</div>
+<p class="muted">전체 주소:</p>
+<div class="box" id="full"></div>
+<p class="warn" id="err" style="display:none">error 파라미터가 있습니다 — 인증이 거부되었거나 실패했습니다. 아래 전체 주소를 로디에게 그대로 전달해 주세요.</p>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+  const err = params.get('error') || params.get('error_description');
+  if (code) document.getElementById('code').textContent = code;
+  document.getElementById('full').textContent = window.location.href;
+  if (err) document.getElementById('err').style.display = 'block';
+</script>
+</body>
+</html>
