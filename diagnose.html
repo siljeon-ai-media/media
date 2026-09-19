@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>우리 가게 AI 첫 직원 30초 진단 — 실전 AI</title><meta property="og:title" content="우리 가게 AI 첫 직원, 30초 진단"><meta property="og:description" content="5문항만 고르면 사장님 가게에 제일 먼저 시킬 AI 일 하나와 오늘 바로 쓸 프롬프트가 나옵니다. 가입·이메일 없음."><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:dark}
+body{background:#121212;color:#F2F2F2;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic",sans-serif;line-height:1.6;-webkit-text-size-adjust:100%}
+.wrap{max-width:640px;margin:0 auto;padding:28px 18px 80px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:26px}
+.logo{width:34px;height:34px;border-radius:8px;background:#000;color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;letter-spacing:-.5px}
+.logo i{display:inline-block;width:6px;height:14px;background:#34E27A;margin-left:2px}
+.top a{color:#A8A8A5;text-decoration:none;font-size:14px}
+.kicker{color:#34E27A;font-weight:800;font-size:13px;letter-spacing:.12em;margin-bottom:8px}
+h1{font-size:26px;line-height:1.25;word-break:keep-all;margin-bottom:12px}
+.what{color:#A8A8A5;font-size:15px;word-break:keep-all;margin-bottom:22px}
+.q{background:#1B1B1B;border:1px solid #2A2A2A;border-radius:14px;padding:18px 16px;margin-bottom:14px}
+.q .n{color:#34E27A;font-weight:800;font-size:12px;letter-spacing:.1em;margin-bottom:6px}
+.q .t{font-size:17px;font-weight:800;line-height:1.35;word-break:keep-all;margin-bottom:12px}
+.opt{display:block;width:100%;text-align:left;margin-top:8px;padding:12px 14px;border-radius:10px;border:1px solid #2A2A2A;background:#161616;color:#E8E8E6;font-size:15px;cursor:pointer;word-break:keep-all;font-family:inherit}
+.opt.on{border-color:#34E27A;background:#16241b;color:#fff}
+.go{display:block;width:100%;margin-top:6px;padding:15px;border:0;border-radius:10px;background:#34E27A;color:#0B1F12;font-weight:800;font-size:16px;cursor:pointer;font-family:inherit}
+.go:disabled{background:#2a2a2a;color:#6c6c6a;cursor:not-allowed}
+.res{display:none}
+.res.show{display:block}
+.card{background:#1B1B1B;border:1px solid #2A2A2A;border-radius:14px;padding:18px 16px;margin-bottom:14px}
+.card .k{color:#34E27A;font-weight:800;font-size:12px;letter-spacing:.1em;margin-bottom:6px}
+.card .t{font-size:20px;font-weight:800;line-height:1.3;word-break:keep-all}
+.card .d{font-size:15px;color:#D8D8D5;margin-top:8px;word-break:keep-all}
+.card .d b{color:#F2F2F2}
+.btn{display:block;margin-top:12px;padding:14px;border-radius:10px;background:#34E27A;color:#0B1F12;text-align:center;text-decoration:none;font-weight:800;font-size:16px}
+.btn2{display:block;margin-top:10px;padding:13px;border-radius:10px;border:1px solid #34E27A;color:#34E27A;text-align:center;text-decoration:none;font-weight:800;font-size:15px}
+.note{margin-top:14px;padding:14px 16px;border-left:3px solid #34E27A;background:#161c18;border-radius:0 10px 10px 0;font-size:14px;color:#D8D8D5;word-break:keep-all}
+.note b{color:#F2F2F2}
+.limit{margin-top:12px;font-size:14px;color:#A8A8A5;word-break:keep-all}
+.limit b{color:#FFD23F}
+.again{margin-top:18px;background:none;border:0;color:#A8A8A5;text-decoration:underline;font-size:14px;cursor:pointer;font-family:inherit}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid #2A2A2A;font-size:13px;color:#6c6c6a;word-break:keep-all}
+.foot a{color:#34E27A;text-decoration:none}
+.bar{position:fixed;left:0;bottom:0;height:6px;background:#34E27A;width:0;transition:width .3s}
+</style></head><body><div class="wrap">
+<div class="top"><div class="logo">실전<i></i></div><a href="prompts.html">실전 AI 프롬프트 자료실</a></div>
+
+<div id="quiz">
+<div class="kicker">30초 진단 · 가입 없음 · 이메일 없음</div>
+<h1>우리 가게에 제일 먼저 시킬 AI 일, 하나만 고르면</h1>
+<p class="what">5문항 고르면 사장님 가게의 "AI 첫 직원"과 오늘 바로 붙여넣을 프롬프트 한 개가 나옵니다. 답은 저장되지 않아요.</p>
+
+<div class="q" data-q="1"><div class="n">1 / 5</div><div class="t">요즘 제일 시간을 잡아먹는 일은?</div>
+<button class="opt" data-v="content">광고·SNS 게시물 만들기</button>
+<button class="opt" data-v="reply">손님 문의·리뷰 답변</button>
+<button class="opt" data-v="scout">경쟁 가게·시장 살펴보기</button>
+<button class="opt" data-v="money">정산·재고·매출 정리</button></div>
+
+<div class="q" data-q="2"><div class="n">2 / 5</div><div class="t">챗GPT·클로드 같은 AI, 어디까지 써보셨어요?</div>
+<button class="opt" data-v="none">아직 안 써봄</button>
+<button class="opt" data-v="some">가끔 물어보는 정도</button>
+<button class="opt" data-v="daily">매일 쓰는데 매번 우리 가게를 다시 설명함</button>
+<button class="opt" data-v="auto">자동으로 돌아가게 만들어 본 적 있음</button></div>
+
+<div class="q" data-q="3"><div class="n">3 / 5</div><div class="t">마케팅·문의·정리 같은 잡무에 하루 얼마나 쓰세요?</div>
+<button class="opt" data-v="30">30분 이하</button>
+<button class="opt" data-v="60">1시간쯤</button>
+<button class="opt" data-v="120">2시간쯤</button>
+<button class="opt" data-v="180">3시간 넘게</button></div>
+
+<div class="q" data-q="4"><div class="n">4 / 5</div><div class="t">지금 제일 원하는 건?</div>
+<button class="opt" data-v="now">오늘 당장 10분이라도 줄이기</button>
+<button class="opt" data-v="memory">매번 설명 안 해도 우리 가게를 아는 AI</button>
+<button class="opt" data-v="marketing">광고·SNS·경쟁 가게가 알아서 정리돼 오기</button>
+<button class="opt" data-v="company">아침에 보고가 오고 나는 답장 한 줄로 결재만</button></div>
+
+<div class="q" data-q="5"><div class="n">5 / 5</div><div class="t">코딩은요?</div>
+<button class="opt" data-v="no">절대 안 함 — 복사·붙여넣기까지만</button>
+<button class="opt" data-v="maybe">화면대로 따라 치는 건 할 수 있음</button>
+<button class="opt" data-v="ok">조금 해볼 의향 있음</button></div>
+
+<button class="go" id="go" disabled>5개 다 고르면 결과 보기</button>
+</div>
+
+<div class="res" id="res">
+<div class="kicker">진단 결과</div>
+<h1 id="r-title"></h1>
+<div class="card"><div class="k">오늘 붙여넣을 것 1개</div><div class="t" id="r-first"></div><div class="d" id="r-why"></div><a class="btn" id="r-link" href="#">프롬프트 열기 (복사 버튼 있음)</a></div>
+<div class="card"><div class="k" id="r-tierk"></div><div class="t" id="r-tier"></div><div class="d" id="r-tierd"></div><a class="btn2" href="https://siljeon-cohort.replit.app/signup">0원으로 AI 직원 3일 써보기 (입장 코드 없이 가입)</a></div>
+<div class="note" id="r-time"></div>
+<div class="limit" id="r-code"></div>
+<button class="again" id="again">다시 고르기</button>
+</div>
+
+<div class="foot">실전 AI(@siljeon.ai)는 실제로 돌아가는 가게 하나에 AI 직원을 붙여 본 과정을 그대로 보여드립니다. 결과 화면이 없는 건 안 올립니다. · <a href="https://litt.ly/siljeon.ai">litt.ly/siljeon.ai</a></div>
+</div><div class="bar" id="bar"></div>
+<script>
+(function(){
+var A={};var qs=document.querySelectorAll('.q');var go=document.getElementById('go');var bar=document.getElementById('bar');
+qs.forEach(function(q){q.querySelectorAll('.opt').forEach(function(b){b.addEventListener('click',function(){q.querySelectorAll('.opt').forEach(function(x){x.classList.remove('on')});b.classList.add('on');A[q.dataset.q]=b.dataset.v;var n=Object.keys(A).length;bar.style.width=(n/5*100)+'%';go.disabled=n<5;go.textContent=n<5?(5-n)+'개 더 고르면 결과 보기':'결과 보기';var nx=q.nextElementSibling;if(nx&&nx.classList.contains('q'))nx.scrollIntoView({behavior:'smooth',block:'center'});})})});
+var FIRST={
+ content:{t:'이번 주 카드뉴스 소재 10개, 표로 받기',w:'게시물 만들기가 제일 오래 걸린다면 "뭘 올리지"부터 없애는 게 순서입니다. 우리 가게 한 줄만 바꿔 붙이면 소재 10개가 표로 나옵니다.',l:'prompt-ep1.html'},
+ reply:{t:'문의 카톡 붙여넣으면 답변 초안 3개',w:'답장 쓰다 지우다 하는 시간이 제일 아깝습니다. 문의 하나 붙여넣으면 짧게·정중하게·대안 제시 세 가지 초안이 나오고, 사장님은 고르기만 합니다.',l:'prompt-ep4.html'},
+ scout:{t:'경쟁 가게 인스타 3곳 → 표 한 장',w:'하나씩 들어가 보는 대신 3곳 캡션을 붙여넣으면 "뭘 밀고 있는지·반응·우리와 다른 점"이 표 한 장으로 나옵니다.',l:'prompt-ep3.html'},
+ money:{t:'매일 아침 자료만 바꿔 붙이는 아침 보고',w:'정산·매출 정리는 "어제 요약 → 급한 것 1개 → 오늘 할 일 3개"로 받아 보는 게 첫걸음입니다. 매출표·리뷰·문의를 붙여넣기만 하면 됩니다.',l:'prompt-ep8.html'}
+};
+var TIER={
+ free:{k:'지금 단계 · 회사 견학 (무료)',t:'프롬프트 3개로 "AI가 우리 가게 일을 하긴 하는구나"를 먼저 확인',d:'위 프롬프트로 오늘 10분을 줄여 보세요. 그게 되면 다음은 "매번 설명 안 해도 되는 직원 1명"입니다.'},
+ low:{k:'맞는 단계 · 첫 채용',t:'우리 가게를 기억하는 AI 직원 1명 만들기',d:'매번 가게 설명을 반복하고 계시다면, 가게 정보를 한 번 적어 두고 그 직원한테만 시키는 구조가 답입니다. 코딩 없이 복사·붙여넣기로 갑니다.'},
+ mid:{k:'맞는 단계 · 팀 세팅',t:'광고 성과·경쟁 가게·SNS가 알아서 정리돼 오는 마케팅 팀',d:'직원 1명이 되면, 광고 결과표 해석·경쟁 가게 정찰·게시물 소재를 각각 맡는 직원을 붙입니다. 사장님은 보고만 받습니다.'},
+ high:{k:'맞는 단계 · 회사 구축',t:'아침에 텔레그램으로 보고가 오고, 답장 한 줄이 결재가 되는 구조',d:'부서(마케팅·CS·정산)마다 직원봇을 두고 사장님은 결재만 하는 단계입니다. 0원 도구(텔레그램·구글 시트)만으로 만듭니다.'}
+};
+go.addEventListener('click',function(){
+ var f=FIRST[A[1]];var tier='free';
+ if(A[4]==='company'||A[2]==='auto')tier='high';else if(A[4]==='marketing')tier='mid';else if(A[4]==='memory'||A[2]==='daily')tier='low';
+ var tt=TIER[tier];
+ document.getElementById('r-title').textContent='사장님 가게의 AI 첫 직원은 "'+f.t.split(',')[0].split(' →')[0]+'" 담당입니다';
+ document.getElementById('r-first').textContent=f.t;document.getElementById('r-why').textContent=f.w;document.getElementById('r-link').href=f.l;
+ document.getElementById('r-tierk').textContent=tt.k;document.getElementById('r-tier').textContent=tt.t;document.getElementById('r-tierd').textContent=tt.d;
+ var m={30:'30분',60:'1시간',120:'2시간',180:'3시간 이상'}[A[3]];
+ document.getElementById('r-time').innerHTML='<b>지금 하루 '+m+'</b>을 잡무에 쓰고 계십니다. 전부 없애려 하지 말고, 그중 <b>매일 똑같이 반복되는 한 가지</b>부터 위 프롬프트로 맡겨 보세요. 줄어드는 시간은 사장님이 직접 재 보시는 게 정확합니다 — 저희는 "몇 배 준다"는 숫자를 약속하지 않습니다.';
+ document.getElementById('r-code').innerHTML=A[5]==='no'?'<b>코딩 절대 안 하셔도 됩니다.</b> 모든 단계에 "복사·붙여넣기만" 갈래가 따로 있습니다.':(A[5]==='maybe'?'<b>화면대로 따라 치는 정도면 충분합니다.</b> 코드는 "읽지 않아도 됩니다 + 복사하기" 버튼으로만 나옵니다.':'<b>조금 해볼 의향이 있으시면</b> 정식 갈래(코드 조금)로 더 촘촘하게 자동화할 수 있습니다.');
+ document.getElementById('quiz').style.display='none';document.getElementById('res').classList.add('show');bar.style.width='100%';window.scrollTo({top:0,behavior:'smooth'});
+});
+document.getElementById('again').addEventListener('click',function(){A={};document.querySelectorAll('.opt.on').forEach(function(x){x.classList.remove('on')});go.disabled=true;go.textContent='5개 다 고르면 결과 보기';bar.style.width='0';document.getElementById('res').classList.remove('show');document.getElementById('quiz').style.display='block';window.scrollTo({top:0});});
+})();
+</script></body></html>
