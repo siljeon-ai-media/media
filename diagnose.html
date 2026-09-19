@@ -78,9 +78,10 @@ h1{font-size:26px;line-height:1.25;word-break:keep-all;margin-bottom:12px}
 <div class="kicker">진단 결과</div>
 <h1 id="r-title"></h1>
 <div class="card"><div class="k">오늘 붙여넣을 것 1개</div><div class="t" id="r-first"></div><div class="d" id="r-why"></div><a class="btn" id="r-link" href="#">프롬프트 열기 (복사 버튼 있음)</a></div>
-<div class="card"><div class="k" id="r-tierk"></div><div class="t" id="r-tier"></div><div class="d" id="r-tierd"></div><a class="btn2" href="https://siljeon-cohort.replit.app/signup">0원으로 AI 직원 3일 써보기 (입장 코드 없이 가입)</a></div>
+<div class="card"><div class="k" id="r-tierk"></div><div class="t" id="r-tier"></div><div class="d" id="r-tierd"></div><a class="btn2" href="https://siljeon-cohort.replit.app/signup">0원으로 AI 직원 5일 써보기 (입장 코드 없이 가입)</a></div>
 <div class="note" id="r-time"></div>
 <div class="limit" id="r-code"></div>
+<a class="btn2" href="https://open.kakao.com/o/gk1UYrNi">막히는 부분 있으면 무료 단톡방에서 캡처로 물어보기</a>
 <button class="again" id="again">다시 고르기</button>
 </div>
 
@@ -92,7 +93,7 @@ var A={};var qs=document.querySelectorAll('.q');var go=document.getElementById('
 qs.forEach(function(q){q.querySelectorAll('.opt').forEach(function(b){b.addEventListener('click',function(){q.querySelectorAll('.opt').forEach(function(x){x.classList.remove('on')});b.classList.add('on');A[q.dataset.q]=b.dataset.v;var n=Object.keys(A).length;bar.style.width=(n/5*100)+'%';go.disabled=n<5;go.textContent=n<5?(5-n)+'개 더 고르면 결과 보기':'결과 보기';var nx=q.nextElementSibling;if(nx&&nx.classList.contains('q'))nx.scrollIntoView({behavior:'smooth',block:'center'});})})});
 var FIRST={
  content:{t:'이번 주 카드뉴스 소재 10개, 표로 받기',w:'게시물 만들기가 제일 오래 걸린다면 "뭘 올리지"부터 없애는 게 순서입니다. 우리 가게 한 줄만 바꿔 붙이면 소재 10개가 표로 나옵니다.',l:'prompt-ep1.html'},
- reply:{t:'문의 카톡 붙여넣으면 답변 초안 3개',w:'답장 쓰다 지우다 하는 시간이 제일 아깝습니다. 문의 하나 붙여넣으면 짧게·정중하게·대안 제시 세 가지 초안이 나오고, 사장님은 고르기만 합니다.',l:'prompt-ep4.html'},
+ reply:{t:'리뷰 50개 답변, 한번 붙여넣으면 끝',w:'답장 쓰다 지우다 하는 시간이 제일 아깝습니다. 리뷰를 통째로 붙여넣으면 별점 낮은 건 맨 위로 따로 모아 먼저 보여주고, 나머지는 답장 초안이 다 나옵니다.',l:'prompt-ep7.html'},
  scout:{t:'경쟁 가게 인스타 3곳 → 표 한 장',w:'하나씩 들어가 보는 대신 3곳 캡션을 붙여넣으면 "뭘 밀고 있는지·반응·우리와 다른 점"이 표 한 장으로 나옵니다.',l:'prompt-ep3.html'},
  money:{t:'매일 아침 자료만 바꿔 붙이는 아침 보고',w:'정산·매출 정리는 "어제 요약 → 급한 것 1개 → 오늘 할 일 3개"로 받아 보는 게 첫걸음입니다. 매출표·리뷰·문의를 붙여넣기만 하면 됩니다.',l:'prompt-ep8.html'}
 };
