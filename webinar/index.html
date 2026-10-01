@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>10/14(수) 밤 9시 무료 라이브 | 실전 AI</title>
-<meta name="description" content="리뷰 답글·문의 답변·SNS 글, 매일 밀리던 일을 AI 직원에게 넘기는 법. 실제로 돌아가는 화면을 10/14(수) 밤 9시에 라이브로 공개합니다. 참가비 0원.">
+<title>알아서 일하는 AI 직원 무료 라이브 | 실전 AI</title>
+<meta name="description" content="일을 맡기면 알아서 일하는 AI 직원이 비서처럼 옆에서 챙깁니다. 실제로 돌아가는 화면을 10/14(수) 밤 9시에 라이브로 공개합니다. 참가비 0원.">
 <meta name="robots" content="noindex">
-<meta property="og:title" content="아침 8시, AI 직원이 오늘 할 일을 먼저 보고합니다">
+<meta property="og:title" content="일을 맡기면, 알아서 일하는 AI가 비서처럼 챙겨줍니다">
 <meta property="og:description" content="10/14(수) 밤 9시 · 실제로 돌아가는 화면 라이브 공개 · 참가비 0원">
 <meta property="og:image" content="https://siljeon-ai-media.github.io/media/webinar/proof-morning.jpg">
 <meta name="theme-color" content="#FAF8F3">
@@ -38,6 +38,11 @@
   .cta b{font-size:1.22rem;letter-spacing:-.01em}.cta span{font-size:.86rem;color:#CFEFDC;font-weight:600}
   .cta-row{margin-top:18px;max-width:440px}
   .micro{margin-top:10px;font-size:.8rem;color:var(--dim2);display:flex;flex-wrap:wrap;gap:4px 14px}.micro span:before{content:"✓ ";color:var(--accent);font-weight:800}
+  .count-label{margin-top:18px;font-size:.82rem;color:var(--dim);font-weight:700}
+  .count{display:flex;gap:8px;margin-top:8px}
+  .count div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:9px 0;min-width:62px;text-align:center}
+  .count b{display:block;font-size:1.5rem;font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .count small{font-size:.7rem;color:var(--dim2);font-weight:700}
   .phone{width:min(100%,350px);margin:0 auto;background:#1B1B18;border-radius:38px;padding:10px;box-shadow:0 30px 60px rgba(30,25,10,.22)}
   .screen{background:#DCE6DA;border-radius:29px;overflow:hidden;min-height:400px;display:flex;flex-direction:column}
   .bar{background:#fff;padding:11px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #E7E7E3}
@@ -89,13 +94,15 @@
   <header class="hero">
     <div>
       <div class="eyebrow"><span class="u">혼자 일하는 사장님을</span> <span class="u">위한 무료 라이브</span></div>
-      <h1>아침 8시,<br><em>AI 직원</em>이 오늘 할 일을<br>먼저 보고합니다</h1>
-      <p class="sub"><span class="u">리뷰 답글·문의 답변·SNS 글,</span> <span class="u">매일 밀리던 일을</span> <span class="u">AI 직원에게 넘기는 법.</span> <span class="u"><b>실제로 돌아가는 화면 그대로</b></span> <span class="u">보여드립니다.</span></p>
-      <div class="date">10월 14일(수) 밤 9시 <small id="dday">D-?</small></div>
+      <h1>일을 맡기면,<br><em>알아서 일하는 AI</em>가<br>비서처럼 챙겨줍니다</h1>
+      <p class="sub"><span class="u">리뷰 답글·문의 답변·SNS 글,</span> <span class="u">매일 밀리던 일을</span> <span class="u">AI 직원에게 맡기세요.</span> <span class="u">사장님 옆에서 챙기고 보고하는 모습을</span> <span class="u"><b>실제로 돌아가는 화면 그대로</b></span> <span class="u">보여드립니다.</span></p>
+      <div class="date">10월 14일(수) 밤 9시</div>
       <div class="cta-row">
         <a class="cta" id="cta-hero" data-pos="hero" href="https://open.kakao.com/o/gk1UYrNi" rel="noopener"><b>무료 라이브 대기방 입장</b><span>카카오톡 오픈채팅 · 참가비 0원</span></a>
         <div class="micro"><span>닉네임만으로 입장</span><span>카드·개인정보 입력 없음</span></div>
       </div>
+      <div class="count-label" id="countLabel">라이브 시작까지</div>
+      <div class="count" id="count"><div><b id="cd">-</b><small>일</small></div><div><b id="ch">--</b><small>시간</small></div><div><b id="cm">--</b><small>분</small></div><div><b id="cs">--</b><small>초</small></div></div>
     </div>
     <div>
       <div class="phone" aria-hidden="true"><div class="screen">
@@ -140,9 +147,11 @@
   </section>
 
   <section class="faq">
-    <details><summary>컴퓨터를 잘 몰라도 되나요?</summary><p><span class="u">코딩 없습니다.</span> <span class="u">복사, 붙여넣기,</span> <span class="u">그리고 "네" 누르기가</span> <span class="u">전부입니다.</span></p></details>
-    <details><summary>설명회에서 뭘 파나요?</summary><p><span class="u">화면을 먼저 보여드립니다.</span> <span class="u">마지막에 20일 과정 안내가 있지만,</span> <span class="u">그날 결정하지 않으셔도 됩니다.</span></p></details>
-    <details><summary>그 시간에 어렵다면요?</summary><p><span class="u">대기방에 들어와 계시면</span> <span class="u">당일 접속 링크와 이후 안내를</span> <span class="u">받으실 수 있습니다.</span> <span class="u">궁금한 점은</span> <span class="u">방에 편하게 남겨 주세요.</span></p></details>
+    <details><summary>컴퓨터를 잘 몰라도 되나요?</summary><p><span class="u">코딩 없습니다.</span> <span class="u">그림을 보며</span> <span class="u">복사, 붙여넣기,</span> <span class="u">그리고 "네" 누르기만 하면 됩니다.</span></p></details>
+    <details><summary>AI를 한 번도 안 써봤는데 괜찮나요?</summary><p><span class="u">처음이셔도 됩니다.</span> <span class="u">그림 순서대로 따라 하고,</span> <span class="u">막히는 곳은 질문하시면</span> <span class="u">안내해 드립니다.</span></p></details>
+    <details><summary>텔레그램을 안 써봤는데요?</summary><p><span class="u">설치와 가입부터</span> <span class="u">그림으로 안내합니다.</span> <span class="u">처음이셔도</span> <span class="u">따라오실 수 있습니다.</span></p></details>
+    <details><summary>뭘 준비해야 하나요?</summary><p><span class="u">컴퓨터(크롬),</span> <span class="u">텔레그램이 깔린 폰,</span> <span class="u">구글 계정(지메일) 하나면</span> <span class="u">충분합니다.</span></p></details>
+    <details><summary>설명회는 정말 무료인가요?</summary><p><span class="u">참가비 0원입니다.</span> <span class="u">카드·개인정보 입력 없이</span> <span class="u">카카오톡 오픈채팅 입장만으로</span> <span class="u">참여하실 수 있습니다.</span></p></details>
   </section>
 
   <section>
@@ -159,10 +168,13 @@
 
 <script>
 (function(){
-  // D-day 표기: 실제 일정(2026-10-14 21:00 KST) 기준, 카운트다운 타이머 아님
-  var T=new Date('2026-10-14T21:00:00+09:00').getTime(),d=document.getElementById('dday'),H9=9*36e5,DAY=864e5;
-  var diff=Math.floor((T+H9)/DAY)-Math.floor((Date.now()+H9)/DAY); // 한국 날짜 기준 남은 일수
-  d.textContent=diff<=0?(Date.now()>T?'진행 중':'오늘'):'D-'+diff;
+  // 실제 일정(2026-10-14 21:00 KST)까지 남은 시간 — 반복·리셋 없는 실제 카운트다운
+  var T=new Date('2026-10-14T21:00:00+09:00').getTime();
+  function p(n){return n<10?'0'+n:''+n}
+  function tick(){var l=T-Date.now();
+    if(l<=0){document.getElementById('count').style.display='none';document.getElementById('countLabel').textContent='라이브가 시작됐습니다. 지금 입장하세요';return}
+    document.getElementById('cd').textContent=Math.floor(l/864e5);document.getElementById('ch').textContent=p(Math.floor(l%864e5/36e5));document.getElementById('cm').textContent=p(Math.floor(l%36e5/6e4));document.getElementById('cs').textContent=p(Math.floor(l%6e4/1e3))}
+  tick();setInterval(tick,1000);
   var msgs=[].slice.call(document.querySelectorAll('#chat .msg')),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   msgs.forEach(function(m,i){setTimeout(function(){m.classList.add('in')},reduce?0:400+i*1200)});
   var hero=document.getElementById('cta-hero'),st=document.getElementById('sticky');
