@@ -18,6 +18,8 @@
   html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
   body{background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;word-break:keep-all;line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit}
+  .u{white-space:nowrap}
+  h1,h2,h3,.sub,.lead,.note,.row p,.faq p,.eyebrow{text-wrap:balance}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
   .top{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
   .brand{font-weight:800;letter-spacing:-.03em;font-size:1.05rem}.brand i{font-style:normal;color:var(--accent)}
@@ -86,9 +88,9 @@
 
   <header class="hero">
     <div>
-      <div class="eyebrow">혼자 일하는 사장님을 위한 무료 라이브</div>
+      <div class="eyebrow"><span class="u">혼자 일하는 사장님을</span> <span class="u">위한 무료 라이브</span></div>
       <h1>아침 8시,<br><em>AI 직원</em>이 오늘 할 일을<br>먼저 보고합니다</h1>
-      <p class="sub">리뷰 답글·문의 답변·SNS 글, 매일 밀리던 일을 AI 직원에게 넘기는 법. <b>실제로 돌아가는 화면 그대로</b> 보여드립니다.</p>
+      <p class="sub"><span class="u">리뷰 답글·문의 답변·SNS 글,</span> <span class="u">매일 밀리던 일을</span> <span class="u">AI 직원에게 넘기는 법.</span> <span class="u"><b>실제로 돌아가는 화면 그대로</b></span> <span class="u">보여드립니다.</span></p>
       <div class="date">10월 14일(수) 밤 9시 <small id="dday">D-?</small></div>
       <div class="cta-row">
         <a class="cta" id="cta-hero" data-pos="hero" href="https://open.kakao.com/o/gk1UYrNi" rel="noopener"><b>무료 라이브 대기방 입장</b><span>카카오톡 오픈채팅 · 참가비 0원</span></a>
@@ -101,8 +103,11 @@
         <div class="chat" id="chat">
           <div class="msg bot"><span class="who">보고팀 김대리</span>☀️ 아침 보고 · 10월 15일(목)
 사장님, 좋은 아침입니다.
-① 오늘 할 일 3: 문의 답장 · 재고 확인 · 인스타 올리기
-② 오늘 제안 1개: 점심 직전에 신메뉴 사진 올리기
+① 오늘 할 일 3개
+   문의 답장 · 재고 확인
+   인스타 올리기
+② 오늘 제안 1개
+   점심 직전에 신메뉴 사진 올리기
 → 답장 1 = 승인 / 2 = 보류<span class="t">08:00</span></div>
           <div class="msg me">1 완료, 2 보류, 3은 오후에<span class="t">08:02</span></div>
           <div class="msg bot"><span class="who">보고팀 김대리</span>📝 결재 기록했습니다.<span class="t">08:02</span></div>
@@ -112,11 +117,11 @@
   </header>
 
   <section>
-    <h2>이 날, <em>이 세 가지</em>를 화면으로 봅니다</h2>
+    <h2><span class="u">이 날,</span> <span class="u"><em>이 세 가지</em>를</span> <span class="u">화면으로 봅니다</span></h2>
     <div class="rows" style="margin-top:16px">
-      <div class="row"><div class="n">1</div><div><h3>아침 보고가 저절로 오는 화면</h3><p>오늘 할 일·챙길 것을 사람 직원처럼 먼저 보고합니다.</p></div></div>
-      <div class="row"><div class="n">2</div><div><h3>문의·리뷰 답변 초안, 3초</h3><p>쓰는 건 AI, 사장님은 골라서 보내기만 하면 됩니다.</p></div></div>
-      <div class="row"><div class="n">3</div><div><h3>부서 7개가 생기는 20일</h3><p>구글·텔레그램 무료 기능으로 시작합니다. 코딩은 없습니다.</p></div></div>
+      <div class="row"><div class="n">1</div><div><h3><span class="u">아침 보고가</span> <span class="u">저절로 오는 화면</span></h3><p><span class="u">오늘 할 일·챙길 것을</span> <span class="u">사람 직원처럼</span> <span class="u">먼저 보고합니다.</span></p></div></div>
+      <div class="row"><div class="n">2</div><div><h3><span class="u">문의·리뷰 답변 초안,</span> <span class="u">3초</span></h3><p><span class="u">쓰는 건 AI,</span> <span class="u">사장님은 골라서</span> <span class="u">보내기만 하면 됩니다.</span></p></div></div>
+      <div class="row"><div class="n">3</div><div><h3><span class="u">부서 7개가</span> <span class="u">생기는 20일</span></h3><p><span class="u">구글·텔레그램 무료 기능으로</span> <span class="u">시작합니다.</span> <span class="u">코딩은 없습니다.</span></p></div></div>
     </div>
   </section>
 
@@ -126,24 +131,24 @@
     <div class="proof">
       <div>
         <h2>그림이 아니라,<br><em>실제 돌아가는 화면</em></h2>
-        <p class="lead">교재대로 따라가면 나오는 결과 화면입니다. 설명회에서 이 화면이 움직이는 걸 처음부터 끝까지 보여드립니다.</p>
+        <p class="lead"><span class="u">교재대로 따라가면</span> <span class="u">나오는 결과 화면입니다.</span> <span class="u">설명회에서 이 화면이</span> <span class="u">움직이는 걸</span> <span class="u">처음부터 끝까지</span> <span class="u">보여드립니다.</span></p>
         <div class="stats"><div class="stat"><b>7</b><span>부서</span></div><div class="stat"><b>20</b><span>일</span></div><div class="stat"><b>20~30</b><span>분/일</span></div><div class="stat"><b>0</b><span>코딩</span></div></div>
-        <div class="note">AI가 쓴 건 사장님이 마지막에 확인합니다. 그 확인이 하루 20~30분입니다.</div>
+        <div class="note"><span class="u">AI가 쓴 건</span> <span class="u">사장님이 마지막에 확인합니다.</span> <span class="u">그 확인이</span> <span class="u">하루 20~30분입니다.</span></div>
       </div>
       <img src="proof-morning.jpg" alt="실제 텔레그램 아침 보고 화면" loading="lazy" width="790" height="792">
     </div>
   </section>
 
   <section class="faq">
-    <details><summary>컴퓨터를 잘 몰라도 되나요?</summary><p>코딩 없습니다. 복사, 붙여넣기, 그리고 "네" 누르기가 전부입니다.</p></details>
-    <details><summary>설명회에서 뭘 파나요?</summary><p>화면을 먼저 보여드립니다. 마지막에 20일 과정 안내가 있지만, 그날 결정하지 않으셔도 됩니다.</p></details>
-    <details><summary>그 시간에 어렵다면요?</summary><p>대기방에 들어와 계시면 당일 접속 링크와 이후 안내를 받으실 수 있습니다. 궁금한 점은 방에 편하게 남겨 주세요.</p></details>
+    <details><summary>컴퓨터를 잘 몰라도 되나요?</summary><p><span class="u">코딩 없습니다.</span> <span class="u">복사, 붙여넣기,</span> <span class="u">그리고 "네" 누르기가</span> <span class="u">전부입니다.</span></p></details>
+    <details><summary>설명회에서 뭘 파나요?</summary><p><span class="u">화면을 먼저 보여드립니다.</span> <span class="u">마지막에 20일 과정 안내가 있지만,</span> <span class="u">그날 결정하지 않으셔도 됩니다.</span></p></details>
+    <details><summary>그 시간에 어렵다면요?</summary><p><span class="u">대기방에 들어와 계시면</span> <span class="u">당일 접속 링크와 이후 안내를</span> <span class="u">받으실 수 있습니다.</span> <span class="u">궁금한 점은</span> <span class="u">방에 편하게 남겨 주세요.</span></p></details>
   </section>
 
   <section>
     <div class="band">
       <h2>10월 14일(수) 밤 9시,<br><em>화면으로 확인하세요</em></h2>
-      <p class="lead" style="margin:0 auto 18px">대기방에 들어오시면 당일 접속 링크를 안내합니다.</p>
+      <p class="lead" style="margin:0 auto 18px"><span class="u">대기방에 들어오시면</span> <span class="u">당일 접속 링크를</span> <span class="u">안내합니다.</span></p>
       <div style="max-width:440px;margin:0 auto"><a class="cta" data-pos="final" href="https://open.kakao.com/o/gk1UYrNi" rel="noopener"><b>무료 라이브 대기방 입장</b><span>10.14(수) 21:00 · 참가비 0원</span></a></div>
     </div>
   </section>
