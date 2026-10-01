@@ -86,6 +86,7 @@
   }
   @media(prefers-reduced-motion:reduce){.msg{transition:none}.live:before{animation:none}html{scroll-behavior:auto}}
 </style>
+<noscript><style>.msg{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 <div class="wrap">
@@ -175,7 +176,7 @@
     if(l<=0){document.getElementById('count').style.display='none';document.getElementById('countLabel').textContent='라이브가 시작됐습니다. 지금 입장하세요';return}
     document.getElementById('cd').textContent=Math.floor(l/864e5);document.getElementById('ch').textContent=p(Math.floor(l%864e5/36e5));document.getElementById('cm').textContent=p(Math.floor(l%36e5/6e4));document.getElementById('cs').textContent=p(Math.floor(l%6e4/1e3))}
   tick();setInterval(tick,1000);
-  var msgs=[].slice.call(document.querySelectorAll('#chat .msg')),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var msgs=[].slice.call(document.querySelectorAll('#chat .msg')),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches||/[?&]still/.test(location.search);
   msgs.forEach(function(m,i){setTimeout(function(){m.classList.add('in')},reduce?0:400+i*1200)});
   var hero=document.getElementById('cta-hero'),st=document.getElementById('sticky');
   if('IntersectionObserver' in window){new IntersectionObserver(function(e){st.classList.toggle('show',!e[0].isIntersecting)}).observe(hero)}else{st.classList.add('show')}
