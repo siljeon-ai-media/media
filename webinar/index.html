@@ -37,6 +37,7 @@
   .cta:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(14,122,69,.4)}.cta:active{transform:translateY(1px)}
   .cta b{font-size:1.34rem;letter-spacing:-.01em}.cta span{font-size:.86rem;color:#CFEFDC;font-weight:600}
   .cta-row{margin-top:18px;max-width:440px}
+  .cta2{display:block;margin-top:12px;text-align:center;text-decoration:none;color:var(--accent);font-weight:700;font-size:.95rem;border:2px solid var(--accent);border-radius:14px;padding:12px 10px;background:#fff}
   .micro{margin-top:10px;font-size:.8rem;color:var(--dim2);display:flex;flex-wrap:wrap;gap:4px 14px}.micro span:before{content:"✓ ";color:var(--accent);font-weight:800}
   .count-label{margin-top:18px;font-size:.82rem;color:var(--dim);font-weight:700}
   .count{display:flex;gap:8px;margin-top:8px}
@@ -102,6 +103,7 @@
       <div class="date">10월 14일(수) 밤 9시</div>
       <div class="cta-row">
         <a class="cta" id="cta-hero" data-pos="hero" href="https://open.kakao.com/o/gk1UYrNi" rel="noopener"><b>무료 라이브 대기방 입장</b><span>카카오톡 오픈채팅 · 참가비 0원</span></a>
+        <a class="cta2" data-pos="tg" href="https://t.me/siljeon_ai_log" rel="noopener">또는 텔레그램 채널에서 시작 알림 받기</a>
         <div class="micro"><span>닉네임만으로 입장</span><span>카드·개인정보 입력 없음</span><span>입장 즉시 프롬프트 자료실</span></div>
       </div>
       <div class="count-label" id="countLabel">라이브 시작까지</div>
@@ -192,6 +194,8 @@
   msgs.forEach(function(m,i){setTimeout(function(){m.classList.add('in')},reduce?0:400+i*1200)});
   var hero=document.getElementById('cta-hero'),st=document.getElementById('sticky');
   if('IntersectionObserver' in window){new IntersectionObserver(function(e){st.classList.toggle('show',!e[0].isIntersecting)}).observe(hero)}else{st.classList.add('show')}
+  var B='https://siljeon-cohort.replit.app/api/lp';function bc(e){try{fetch(B+'?e='+e+'&v=w&_='+Date.now(),{mode:'no-cors',keepalive:true})}catch(x){}}
+  bc('view');[].slice.call(document.querySelectorAll('a[data-pos]')).forEach(function(a){a.addEventListener('click',function(){bc('cta_'+a.getAttribute('data-pos'))})});
 })();
 </script>
 </body>
