@@ -1,39 +1,39 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>우리 가게 AI 첫 직원 30초 진단 — 실전 AI</title><meta property="og:title" content="우리 가게 AI 첫 직원, 30초 진단"><meta property="og:description" content="5문항만 고르면 사장님 가게에 제일 먼저 시킬 AI 일 하나와 오늘 바로 쓸 프롬프트가 나옵니다. 가입·이메일 없음."><style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{color-scheme:dark}
-body{background:#121212;color:#F2F2F2;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic",sans-serif;line-height:1.6;-webkit-text-size-adjust:100%}
-.wrap{max-width:640px;margin:0 auto;padding:28px 18px 80px}
-.top{display:flex;align-items:center;gap:10px;margin-bottom:26px}
-.logo{width:34px;height:34px;border-radius:8px;background:#000;color:#fff;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center;letter-spacing:-.5px}
-.logo i{display:inline-block;width:6px;height:14px;background:#34E27A;margin-left:2px}
-.top a{color:#A8A8A5;text-decoration:none;font-size:14px}
-.kicker{color:#34E27A;font-weight:800;font-size:13px;letter-spacing:.12em;margin-bottom:8px}
-h1{font-size:26px;line-height:1.25;word-break:keep-all;margin-bottom:12px}
-.what{color:#A8A8A5;font-size:15px;word-break:keep-all;margin-bottom:22px}
-.q{background:#1B1B1B;border:1px solid #2A2A2A;border-radius:14px;padding:18px 16px;margin-bottom:14px}
-.q .n{color:#34E27A;font-weight:800;font-size:12px;letter-spacing:.1em;margin-bottom:6px}
-.q .t{font-size:17px;font-weight:800;line-height:1.35;word-break:keep-all;margin-bottom:12px}
-.opt{display:block;width:100%;text-align:left;margin-top:8px;padding:12px 14px;border-radius:10px;border:1px solid #2A2A2A;background:#161616;color:#E8E8E6;font-size:15px;cursor:pointer;word-break:keep-all;font-family:inherit}
-.opt.on{border-color:#34E27A;background:#16241b;color:#fff}
-.go{display:block;width:100%;margin-top:6px;padding:15px;border:0;border-radius:10px;background:#34E27A;color:#0B1F12;font-weight:800;font-size:16px;cursor:pointer;font-family:inherit}
-.go:disabled{background:#2a2a2a;color:#6c6c6a;cursor:not-allowed}
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>우리 가게 AI 첫 직원 30초 진단 — 실전 AI</title><meta property="og:title" content="우리 가게 AI 첫 직원, 30초 진단"><meta property="og:description" content="5문항만 고르면 사장님 가게에 제일 먼저 시킬 AI 일 하나와 오늘 바로 쓸 프롬프트가 나옵니다. 가입·이메일 없음."><style>*{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:light}
+body{background:#F7F6F2;color:#1C1F1D;font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.7;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:40px 22px 72px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:44px}
+.logo{width:30px;height:28px;border-radius:7px;background:#1C1F1D;color:#fff;font-weight:800;font-size:11px;display:inline-flex;align-items:center;justify-content:center}
+.logo i{display:inline-block;width:3px;height:11px;background:#5FBF8F;margin-left:2px;border-radius:1px}
+.top a{color:#667069;text-decoration:none;font-size:14px}
+.kicker{font-size:13px;color:#2F7A57;font-weight:600;letter-spacing:.02em;margin-bottom:12px}
+h1{font-size:28px;line-height:1.38;font-weight:700;letter-spacing:-.6px;word-break:keep-all;text-wrap:balance;margin-bottom:16px}
+.what{color:#4F5852;font-size:16px;line-height:1.8;word-break:keep-all;margin-bottom:32px}
+.q{background:#fff;border:1px solid #E6E3DA;border-radius:16px;padding:24px 22px 20px;margin-bottom:18px;box-shadow:0 1px 2px rgba(28,31,29,.04)}
+.q .n{color:#9AA29D;font-weight:600;font-size:13px;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.q .t{font-size:17px;font-weight:700;line-height:1.5;word-break:keep-all;margin-bottom:12px;letter-spacing:-.3px}
+.opt{display:block;width:100%;text-align:left;margin-top:8px;padding:13px 15px;border-radius:12px;border:1px solid #E6E3DA;background:#FBFAF7;color:#2B312D;font-size:15.5px;line-height:1.55;cursor:pointer;word-break:keep-all;font-family:inherit}
+.opt:hover{border-color:#B9C8BF}
+.opt.on{border-color:#1F5C42;background:#E8EFEA;color:#1C1F1D;font-weight:600}
+.go{display:block;width:100%;margin-top:8px;padding:15px;border:0;border-radius:12px;background:#1F5C42;color:#fff;font-weight:600;font-size:16px;cursor:pointer;font-family:inherit}
+.go:disabled{background:#E6E3DA;color:#9AA29D;cursor:not-allowed}
 .res{display:none}
 .res.show{display:block}
-.card{background:#1B1B1B;border:1px solid #2A2A2A;border-radius:14px;padding:18px 16px;margin-bottom:14px}
-.card .k{color:#34E27A;font-weight:800;font-size:12px;letter-spacing:.1em;margin-bottom:6px}
-.card .t{font-size:20px;font-weight:800;line-height:1.3;word-break:keep-all}
-.card .d{font-size:15px;color:#D8D8D5;margin-top:8px;word-break:keep-all}
-.card .d b{color:#F2F2F2}
-.btn{display:block;margin-top:12px;padding:14px;border-radius:10px;background:#34E27A;color:#0B1F12;text-align:center;text-decoration:none;font-weight:800;font-size:16px}
-.btn2{display:block;margin-top:10px;padding:13px;border-radius:10px;border:1px solid #34E27A;color:#34E27A;text-align:center;text-decoration:none;font-weight:800;font-size:15px}
-.note{margin-top:14px;padding:14px 16px;border-left:3px solid #34E27A;background:#161c18;border-radius:0 10px 10px 0;font-size:14px;color:#D8D8D5;word-break:keep-all}
-.note b{color:#F2F2F2}
-.limit{margin-top:12px;font-size:14px;color:#A8A8A5;word-break:keep-all}
-.limit b{color:#FFD23F}
-.again{margin-top:18px;background:none;border:0;color:#A8A8A5;text-decoration:underline;font-size:14px;cursor:pointer;font-family:inherit}
-.foot{margin-top:40px;padding-top:18px;border-top:1px solid #2A2A2A;font-size:13px;color:#6c6c6a;word-break:keep-all}
-.foot a{color:#34E27A;text-decoration:none}
-.bar{position:fixed;left:0;bottom:0;height:6px;background:#34E27A;width:0;transition:width .3s}
+.card{background:#fff;border:1px solid #E6E3DA;border-radius:16px;padding:24px 22px 22px;margin-bottom:18px;box-shadow:0 1px 2px rgba(28,31,29,.04)}
+.card .k{color:#2F7A57;font-weight:600;font-size:13px;margin-bottom:8px}
+.card .t{font-size:19px;font-weight:700;line-height:1.5;word-break:keep-all;letter-spacing:-.3px}
+.card .d{font-size:15.5px;color:#4F5852;margin-top:10px;line-height:1.8;word-break:keep-all}
+.card .d b{color:#1C1F1D}
+.btn{display:block;margin-top:18px;padding:14px;border-radius:12px;background:#1F5C42;color:#fff;text-align:center;text-decoration:none;font-weight:600;font-size:16px}
+.btn2{display:block;margin-top:14px;padding:13px;border-radius:12px;border:1px solid #D5D2C8;background:#fff;color:#1C1F1D;text-align:center;text-decoration:none;font-weight:600;font-size:15px}
+.note{margin-top:28px;padding:4px 0 4px 16px;border-left:3px solid #5FBF8F;font-size:15.5px;line-height:1.85;color:#2B312D;word-break:keep-all}
+.note b{color:#1C1F1D}
+.limit{margin-top:22px;font-size:15px;line-height:1.8;color:#4F5852;word-break:keep-all}
+.limit b{color:#1C1F1D}
+.again{margin-top:22px;background:none;border:0;color:#667069;text-decoration:underline;font-size:14px;cursor:pointer;font-family:inherit}
+.foot{margin-top:56px;padding-top:20px;border-top:1px solid #E6E3DA;font-size:13px;color:#8A928D;line-height:1.7;word-break:keep-all}
+.foot a{color:#1F5C42;text-decoration:underline;text-underline-offset:3px}
+.bar{position:fixed;left:0;bottom:0;height:4px;background:#1F5C42;width:0;transition:width .3s}
 </style></head><body><div class="wrap">
 <div class="top"><div class="logo">실전<i></i></div><a href="prompts.html">실전 AI 프롬프트 자료실</a></div>
 
@@ -81,7 +81,7 @@ h1{font-size:26px;line-height:1.25;word-break:keep-all;margin-bottom:12px}
 <div class="card"><div class="k" id="r-tierk"></div><div class="t" id="r-tier"></div><div class="d" id="r-tierd"></div><a class="btn2" href="https://litt.ly/siljeon.ai/sale/iP8HDhR">지금 결제하고 Day 1 시작하기</a></div>
 <div class="note" id="r-time"></div>
 <div class="limit" id="r-code"></div>
-<a class="btn2" href="https://open.kakao.com/o/gk1UYrNi">막히는 부분 있으면 무료 단톡방에서 캡처로 물어보기</a>
+<a class="btn2" href="https://t.me/siljeon_ai_log">매주 실제 숫자로 쓰는 사업 일지 보기 (텔레그램 채널)</a>
 <button class="again" id="again">다시 고르기</button>
 </div>
 
