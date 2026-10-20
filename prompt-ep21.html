@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI한테 SNS 게시를 맡겼다면 — 중복 게시를 자동으로 막는 설정 프롬프트 — 실전 AI 프롬프트 자료실</title><meta property="og:title" content="AI한테 SNS 게시를 맡겼다면 — 중복 게시를 자동으로 막는 설정 프롬프트"><meta property="og:description" content="실전 AI(@siljeon.ai) 영상 속 프롬프트 전문. 복사해서 바로 쓰세요."><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:light}
+body{background:#F7F6F2;color:#1C1F1D;font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.7;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:40px 22px 72px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:44px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;color:#1C1F1D;text-decoration:none;letter-spacing:-.2px}
+.logo{width:30px;height:28px;border-radius:7px;background:#1C1F1D;color:#fff;font-weight:800;font-size:11px;display:inline-flex;align-items:center;justify-content:center}
+.logo i{display:inline-block;width:3px;height:11px;background:#5FBF8F;margin-left:2px;border-radius:1px}
+.top .ig{color:#667069;font-size:14px;text-decoration:none}
+.eyebrow{font-size:13px;color:#2F7A57;font-weight:600;letter-spacing:.02em;margin-bottom:12px}
+h1{font-size:28px;line-height:1.38;font-weight:700;letter-spacing:-.6px;word-break:keep-all;text-wrap:balance;margin-bottom:16px}
+.lead{font-size:16px;line-height:1.8;color:#4F5852;word-break:keep-all;margin-bottom:32px}
+.box{background:#fff;border:1px solid #E6E3DA;border-radius:16px;padding:24px 22px 22px;box-shadow:0 1px 2px rgba(28,31,29,.04)}
+.box-label{font-size:13px;color:#667069;margin-bottom:12px;font-weight:600}
+.box pre{white-space:pre-wrap;word-break:keep-all;font-family:inherit;font-size:15.5px;line-height:1.85;color:#1C1F1D}
+.copy{display:block;width:100%;margin-top:22px;padding:15px;border:0;border-radius:12px;background:#1F5C42;color:#fff;font-weight:600;font-size:16px;cursor:pointer;letter-spacing:-.2px;font-family:inherit}
+.copy:hover{background:#184B36}
+.copy.done{background:#E8EFEA;color:#1F5C42}
+.sec{margin-top:36px}
+.sec h2{font-size:13px;font-weight:600;color:#667069;margin-bottom:8px;letter-spacing:.02em}
+.sec p{font-size:15.5px;line-height:1.85;color:#2B312D;word-break:keep-all}
+.sec a{color:#1F5C42;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.follow{display:block;margin-top:36px;padding:14px;border-radius:12px;border:1px solid #D5D2C8;color:#1C1F1D;text-align:center;text-decoration:none;font-weight:600;font-size:15px;background:#fff}
+.list{display:flex;flex-direction:column;margin-top:8px;border-top:1px solid #E6E3DA}
+.card{display:flex;align-items:center;gap:18px;padding:20px 4px;border-bottom:1px solid #E6E3DA;text-decoration:none;color:inherit}
+.card:hover .t{color:#1F5C42}
+.card .n{flex:0 0 30px;font-size:15px;font-weight:600;color:#9AA29D;font-variant-numeric:tabular-nums}
+.card .b{flex:1;min-width:0}
+.card .k{font-size:12.5px;color:#2F7A57;font-weight:600;margin-bottom:4px}
+.card .t{font-size:16.5px;font-weight:600;line-height:1.5;word-break:keep-all;letter-spacing:-.3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .ar{color:#B5BBB6;font-size:20px}
+.card.pin{background:#fff;border:1px solid #E6E3DA;border-radius:14px;padding:20px;margin-bottom:28px}
+.more{margin-top:56px}
+.more h2{font-size:13px;color:#667069;font-weight:600;margin-bottom:6px}
+.cohort{margin-top:56px;padding:26px 24px;border-radius:16px;background:#fff;border:1px solid #E6E3DA}
+.cohort .k{font-size:13px;color:#2F7A57;font-weight:600;margin-bottom:8px}
+.cohort .t{font-size:18px;font-weight:700;line-height:1.5;word-break:keep-all;letter-spacing:-.3px}
+.cohort .d{font-size:14.5px;color:#667069;margin-top:8px;line-height:1.7;word-break:keep-all}
+.cohort .nx{margin-top:14px;font-size:13.5px;color:#667069;line-height:1.7;word-break:keep-all}
+.cohort .nx a{display:inline;margin:0;padding:0;background:none;color:#1F5C42;text-decoration:underline;text-underline-offset:3px;font-size:inherit}
+.cohort>a{display:inline-block;margin-top:16px;padding:12px 20px;border-radius:10px;background:#1C1F1D;color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.foot{margin-top:48px;padding-top:20px;border-top:1px solid #E6E3DA;font-size:13px;color:#8A928D;line-height:1.7;word-break:keep-all}
+.foot a{color:#667069}
+@media(max-width:480px){.wrap{padding:28px 18px 56px}h1{font-size:24px}.top{margin-bottom:32px}}
+</style></head><body><div class="wrap"><div class="top"><a class="brand" href="prompts.html"><span class="logo">실전<i></i></span>프롬프트 자료실</a><a class="ig" href="https://www.instagram.com/siljeon.ai/?utm_source=library&utm_medium=top-cta&utm_campaign=2610-library">@siljeon.ai</a></div>
+
+<div class="eyebrow">21편 · 같은 글이 두 번 올라가는 사고 막기</div>
+<h1>AI한테 SNS 게시를 맡겼다면 — 중복 게시를 자동으로 막는 설정 프롬프트</h1>
+<p class="lead">저희가 10월 7일에 실제로 겪은 사고예요. 자동 실행 세션과 사람이 쓰던 세션이 같은 소재를 11초 차이로 동시에 올려서 세 채널이 전부 중복 게시됐어요. 그래서 게시 직전에 최근 글과 비교해 겹치면 멈추는 장치를 넣었고, 그 뒤로 실제로 2번 더 막았어요(사람이 우회한 적은 0번). 아래 프롬프트는 같은 장치를 내 게시 자동화에 넣는 방법을 묻는 질문이에요.</p>
+<div class="box"><div class="box-label">프롬프트 · 복사해서 붙여넣기</div><pre id="p21">[AI 게시 자동화 — 중복 게시 방지 장치 설계]
+
+저는 AI(클로드 코드)한테 SNS 게시를 자동화로 맡기고 있어요(또는 맡기려고 해요). 사람이 두 군데서 동시에 올리거나, 자동 실행이 같은 소재를 중복으로 올리는 사고를 막고 싶어요. 아래 조건으로 설계만 먼저 보여 주세요(바로 코드를 짜지 말고).
+
+① 게시 직전에 "최근 N시간 안에 올린 글"과 지금 올리려는 글의 내용을 비교하는 방법을 제안해 주세요(문장 앞부분만 비교하는 간단한 방식도 괜찮아요).
+② 겹치면 그 자리에서 멈추고 이유를 알려주는 동작으로 해 주세요(조용히 그냥 올라가면 안 돼요).
+③ 동시에 두 프로그램이 같은 글을 올리려는 경우까지 막으려면 어떤 장치가 더 필요한지 알려 주세요(먼저 시작한 쪽이 잠깐 '잠그는' 방식 등).
+④ 정말 같은 글을 다시 올려야 할 때를 위한 예외(우회) 방법도 하나 넣어 주시고, 우회한 기록이 남게 해 주세요.
+
+마지막에 "이 설계의 한계"도 한 줄로 알려 주세요.</pre><button class="copy" data-for="p21">프롬프트 복사하기</button></div>
+<div class="sec"><h2>쓰는 법</h2><p>[ ] 안만 우리 업종·상황으로 바꾸고, 클로드나 챗GPT 대화창에 붙여넣으면 끝. 이 장치는 '거의 같은 문장'만 잡아요. 표현을 완전히 바꿔서 올리는 중복까지는 못 잡으니, 자동 실행 지시문에 '오늘 이미 올렸는지 먼저 확인'을 문장으로도 같이 넣어 두면 이중으로 안전해요.</p></div>
+<div class="sec"><h2>한계</h2><p>두 프로그램이 동시에 시작하는 경우(경합)까지 완벽히 막으려면 '잠금 파일' 같은 별도 장치가 필요해요. 위 프롬프트는 설계까지만 묻고, 실제 코드 적용은 직접 확인하면서 진행하세요.</p></div>
+<div class="sec"><h2>돌려보셨나요?</h2><p>나온 표를 <a href="https://www.instagram.com/siljeon.ai/?utm_source=library&utm_medium=episode&utm_campaign=2610-library">@siljeon.ai</a> DM으로 보내주시면 다음 편에서 다뤄요. 잘 안 됐어도 보내주세요 — 그게 더 좋은 편이 됩니다.</p></div>
+<a class="follow" href="https://www.instagram.com/siljeon.ai/?utm_source=library&utm_medium=episode&utm_campaign=2610-library">다음 편을 받아보려면 @siljeon.ai 팔로우</a>
+<div class="more"><h2>다른 편 프롬프트</h2><div class="list"><a class="card" href="prompt-ep1.html"><div class="n">1</div><div class="b"><div class="k">카드뉴스 소재 10개를 3분에</div><div class="t">이번 주 카드뉴스 소재 10개, 표로 받기</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep2.html"><div class="n">2</div><div class="b"><div class="k">광고 결과표 → 오늘 할 일</div><div class="t">광고 결과표 붙여넣으면 사람 말로 해석</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep3.html"><div class="n">3</div><div class="b"><div class="k">경쟁사 인스타 3곳 → 표 한 장</div><div class="t">경쟁사 정찰, 하나씩 안 들어가도 됩니다</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep4.html"><div class="n">4</div><div class="b"><div class="k">손님 문의 1개 → 답변 초안 3개</div><div class="t">문의 카톡 붙여넣으면 답변 초안 3개</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep5.html"><div class="n">5</div><div class="b"><div class="k">매주 쓰는 프롬프트 7개</div><div class="t">요일별로 하나씩, 매주 돌려 쓰는 프롬프트 7개</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep6.html"><div class="n">6</div><div class="b"><div class="k">업종별 AI 첫 직원 표</div><div class="t">카페·식당·쇼핑몰·미용·학원·헬스, 업종별로 제일 먼저 시킬 일 하나</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep7.html"><div class="n">7</div><div class="b"><div class="k">리뷰 50개 답변 한꺼번에</div><div class="t">리뷰를 통째로 붙여넣으면 답변 초안이 리뷰마다 하나씩, 나쁜 리뷰는 맨 위에 따로</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep8.html"><div class="n">8</div><div class="b"><div class="k">아침 보고 프롬프트</div><div class="t">밤에 시켜놓고 닫아도 아침엔 돼 있게 — 매일 아침 자료만 바꿔 붙이는 '아침 보고'</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep9.html"><div class="n">9</div><div class="b"><div class="k">한도 안 닳게 대화 정리</div><div class="t">한도는 질문 횟수가 아니라 대화 길이로 닳아요 — 긴 대화를 10줄로 접고 새 대화로 옮기는 '대화 정리' 프롬프트</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep10.html"><div class="n">10</div><div class="b"><div class="k">월요일 브리프</div><div class="t">월요일 아침 30분을 붙여넣기 한 번으로 — 지난주 숫자를 넣으면 이번 주 할 일 3개까지 나오는 '월요일 브리프' 프롬프트</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep11.html"><div class="n">11</div><div class="b"><div class="k">내 가게에 맞는 AI 모델 고르기</div><div class="t">새 모델 나올 때마다 다 갈아탈 필요 없어요 — 내 쓰임새에 맞는 AI를 골라주는 '모델 고르기' 프롬프트</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep12.html"><div class="n">12</div><div class="b"><div class="k">AI한테 맡겨도 될지 4줄로 판단</div><div class="t">메타도 '시켜놓고 기다리는' AI를 냈어요 — 그럼 우리 가게는 뭘 맡기면 될까, 4줄로 판단하는 프롬프트</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep13.html"><div class="n">13</div><div class="b"><div class="k">릴스 대본 5장 뼈대</div><div class="t">뉴스 하나 던지면 릴스 대본 5장이 나와요 — 저희가 매일 쓰는 뼈대</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep14.html"><div class="n">14</div><div class="b"><div class="k">우리 가게가 받을 수 있는 정부지원 확인</div><div class="t">정부 AI 도우미는 질문에 답만 해줘요 — 저흰 우리 가게 조건을 넣으면 신청할 만한 지원사업까지 골라주는 프롬프트를 씁니다</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep15.html"><div class="n">15</div><div class="b"><div class="k">AI 요금제 갈아탈지 고민될 때</div><div class="t">오픈AI는 요금을 올렸고 클로드는 내렸어요 — 저흰 이 프롬프트로 갈아탈지 판단합니다</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep16.html"><div class="n">16</div><div class="b"><div class="k">AI한테 일 맡기기 전 안전장치 체크</div><div class="t">AI한테 일 맡기기 전, 안전장치 4줄로 정하기</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep17.html"><div class="n">17</div><div class="b"><div class="k">상시 작동 AI, 어디까지 맡길지 정하기</div><div class="t">AI한테 '어디까지' 맡길지 정하는 프롬프트</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep18.html"><div class="n">18</div><div class="b"><div class="k">반복 업무, AI한테 한 번만 가르치기</div><div class="t">반복되는 일, 매번 다시 설명 안 해도 되는 프롬프트</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep19.html"><div class="n">19</div><div class="b"><div class="k">클로드 규칙 파일 3분 건강검진</div><div class="t">내 클로드 규칙 파일, 길기만 하고 낡진 않았을까 — 3가지로 점검하는 프롬프트</div></div><span class="ar">›</span></a><a class="card" href="prompt-ep20.html"><div class="n">20</div><div class="b"><div class="k">예약 자동 실행이 조용히 멈출 때</div><div class="t">클로드 자동 실행이 몇십 초 만에 말없이 끝난다면 — 허용 목록 3곳을 점검하는 프롬프트</div></div><span class="ar">›</span></a></div></div>
+<div class="cohort" style="margin-top:28px"><div class="k">정리된 묶음이 필요하시면</div><div class="t">소상공인 업무표 + AI 프롬프트 20편 템플릿 팩</div><div class="d">이 자료실의 프롬프트를 가게 업무별로 묶고, 언제 쓰는지·넣을 자료·확인할 것과 7개 팀 업무표·루틴표·시트용 파일을 더한 9,900원짜리 묶음이에요. 프롬프트 일부는 이 자료실과 같다는 점을 미리 알려 드려요.</div><a href="https://litt.ly/siljeon.ai?utm_source=library&utm_medium=pack&utm_campaign=2610-library">묶음 보기</a></div>
+<div class="cohort"><div class="k">교재 · 1기 모집 중</div><div class="t">매일 아침 AI 직원이 텔레그램으로 보고하고, 사장님은 답장 한 줄로 결재합니다</div><div class="d">결제하면 바로 Day 1부터 시작합니다. 정해진 조건을 지켰는데도 결과물이 안 나오면 결제 수수료까지 전액 환불합니다. 가격과 조건 전문은 상세 페이지에서 확인하실 수 있어요.</div><a href="https://litt.ly/siljeon.ai/sale/iP8HDhR?utm_source=library&utm_medium=cohort&utm_campaign=2610-library">자세히 보기</a><div class="nx">다음 단계: 무료 자료실 → <a href="https://t.me/siljeon_ai_log?utm_source=library&utm_medium=cohort&utm_campaign=2610-library">무료 텔레그램 채널(매주 월요일 일지)</a> → 교재 소개. 서두르지 않으셔도 됩니다.</div></div>
+<script>document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const t=document.getElementById(b.dataset.for).innerText;try{await navigator.clipboard.writeText(t)}catch(e){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove()}b.textContent='복사됐어요 ✓ 클로드·챗GPT에 붙여넣으세요';b.classList.add('done');setTimeout(()=>{b.textContent='프롬프트 복사하기';b.classList.remove('done')},2500)}))</script><div class="foot">이 계정의 게시물은 AI 직원이 만들고 사람은 결재만 합니다. DM으로 프롬프트를 못 받으셨어도 이 페이지에서 언제든 복사할 수 있어요. 새 편이 올라오면 여기에 쌓입니다. · <a href="https://www.instagram.com/siljeon.ai/?utm_source=library&utm_medium=footer&utm_campaign=2610-library">@siljeon.ai</a></div></div></body></html>
