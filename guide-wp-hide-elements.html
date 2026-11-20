@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>워드프레스에서 글 제목·대표이미지·작성자·날짜 숨기기 — 테마 옵션 vs CSS vs 플러그인 비교 — 실전 AI</title><meta name="description" content="워드프레스에서 글 제목·대표이미지·작성자·날짜를 숨기는 세 방법(테마 옵션·추가 CSS·플러그인) 비교와 자주 묻는 질문."><link rel="canonical" href="https://siljeon-ai-media.github.io/media/guide-wp-hide-elements.html"><meta property="og:title" content="워드프레스에서 글 제목·대표이미지·작성자·날짜 숨기기 — 테마 옵션 vs CSS vs 플러그인 비교"><meta property="og:description" content="워드프레스에서 글 제목·대표이미지·작성자·날짜를 숨기는 세 방법(테마 옵션·추가 CSS·플러그인) 비교와 자주 묻는 질문."><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:light}
+body{background:#F7F6F2;color:#1C1F1D;font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.7;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:40px 22px 72px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:44px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;color:#1C1F1D;text-decoration:none;letter-spacing:-.2px}
+.logo{width:30px;height:28px;border-radius:7px;background:#1C1F1D;color:#fff;font-weight:800;font-size:11px;display:inline-flex;align-items:center;justify-content:center}
+.logo i{display:inline-block;width:3px;height:11px;background:#5FBF8F;margin-left:2px;border-radius:1px}
+.top .ig{color:#667069;font-size:14px;text-decoration:none}
+.eyebrow{font-size:13px;color:#2F7A57;font-weight:600;letter-spacing:.02em;margin-bottom:12px}
+h1{font-size:28px;line-height:1.38;font-weight:700;letter-spacing:-.6px;word-break:keep-all;text-wrap:balance;margin-bottom:16px}
+.lead{font-size:16px;line-height:1.8;color:#4F5852;word-break:keep-all;margin-bottom:32px}
+.box{background:#fff;border:1px solid #E6E3DA;border-radius:16px;padding:24px 22px 22px;box-shadow:0 1px 2px rgba(28,31,29,.04)}
+.box-label{font-size:13px;color:#667069;margin-bottom:12px;font-weight:600}
+.box pre{white-space:pre-wrap;word-break:keep-all;font-family:inherit;font-size:15.5px;line-height:1.85;color:#1C1F1D}
+.copy{display:block;width:100%;margin-top:22px;padding:15px;border:0;border-radius:12px;background:#1F5C42;color:#fff;font-weight:600;font-size:16px;cursor:pointer;letter-spacing:-.2px;font-family:inherit}
+.copy:hover{background:#184B36}
+.copy.done{background:#E8EFEA;color:#1F5C42}
+.sec{margin-top:36px}
+.sec h2{font-size:13px;font-weight:600;color:#667069;margin-bottom:8px;letter-spacing:.02em}
+.sec p{font-size:15.5px;line-height:1.85;color:#2B312D;word-break:keep-all}
+.sec a{color:#1F5C42;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.follow{display:block;margin-top:36px;padding:14px;border-radius:12px;border:1px solid #D5D2C8;color:#1C1F1D;text-align:center;text-decoration:none;font-weight:600;font-size:15px;background:#fff}
+.list{display:flex;flex-direction:column;margin-top:8px;border-top:1px solid #E6E3DA}
+.card{display:flex;align-items:center;gap:18px;padding:20px 4px;border-bottom:1px solid #E6E3DA;text-decoration:none;color:inherit}
+.card:hover .t{color:#1F5C42}
+.card .n{flex:0 0 30px;font-size:15px;font-weight:600;color:#9AA29D;font-variant-numeric:tabular-nums}
+.card .b{flex:1;min-width:0}
+.card .k{font-size:12.5px;color:#2F7A57;font-weight:600;margin-bottom:4px}
+.card .t{font-size:16.5px;font-weight:600;line-height:1.5;word-break:keep-all;letter-spacing:-.3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .ar{color:#B5BBB6;font-size:20px}
+.card.pin{background:#fff;border:1px solid #E6E3DA;border-radius:14px;padding:20px;margin-bottom:28px}
+.more{margin-top:56px}
+.more h2{font-size:13px;color:#667069;font-weight:600;margin-bottom:6px}
+.cohort{margin-top:56px;padding:26px 24px;border-radius:16px;background:#fff;border:1px solid #E6E3DA}
+.cohort .k{font-size:13px;color:#2F7A57;font-weight:600;margin-bottom:8px}
+.cohort .t{font-size:18px;font-weight:700;line-height:1.5;word-break:keep-all;letter-spacing:-.3px}
+.cohort .d{font-size:14.5px;color:#667069;margin-top:8px;line-height:1.7;word-break:keep-all}
+.cohort .nx{margin-top:14px;font-size:13.5px;color:#667069;line-height:1.7;word-break:keep-all}
+.cohort .nx a{display:inline;margin:0;padding:0;background:none;color:#1F5C42;text-decoration:underline;text-underline-offset:3px;font-size:inherit}
+.cohort>a{display:inline-block;margin-top:16px;padding:12px 20px;border-radius:10px;background:#1C1F1D;color:#fff;text-decoration:none;font-weight:600;font-size:15px}
+.foot{margin-top:48px;padding-top:20px;border-top:1px solid #E6E3DA;font-size:13px;color:#8A928D;line-height:1.7;word-break:keep-all}
+.foot a{color:#667069}
+@media(max-width:480px){.wrap{padding:28px 18px 56px}h1{font-size:24px}.top{margin-bottom:32px}}
+.art h1{font-size:26px}.art h2{font-size:19px;font-weight:700;margin:36px 0 10px;letter-spacing:-.3px;color:#1C1F1D;word-break:keep-all}.art p,.art li{font-size:15.5px;line-height:1.85;color:#2B312D;word-break:keep-all;margin-bottom:10px}.art ul,.art ol{padding-left:22px;margin-bottom:12px}.art pre{background:#fff;border:1px solid #E6E3DA;border-radius:12px;padding:16px 18px;white-space:pre-wrap;font-family:inherit;font-size:14.5px;line-height:1.8;margin:10px 0 14px}.art code{background:#EFEDE6;padding:1px 6px;border-radius:5px;font-size:14px}.art pre code{background:none;padding:0}.art table{border-collapse:collapse;width:100%;font-size:14px;margin:12px 0;display:block;overflow-x:auto}.art th,.art td{border:1px solid #E6E3DA;padding:8px 10px;text-align:left;vertical-align:top;background:#fff}.art blockquote{border-left:3px solid #5FBF8F;padding:2px 14px;color:#4F5852;margin:12px 0}.art hr{border:0;border-top:1px solid #E6E3DA;margin:28px 0}.art a{color:#1F5C42;font-weight:600}</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"워드프레스에서 글 제목·대표이미지·작성자·날짜 숨기기 — 테마 옵션 vs CSS vs 플러그인 비교","description":"워드프레스에서 글 제목·대표이미지·작성자·날짜를 숨기는 세 방법(테마 옵션·추가 CSS·플러그인) 비교와 자주 묻는 질문.","datePublished":"2026-11-20","dateModified":"2026-11-20","inLanguage":"ko","author":{"@type":"Organization","name":"실전 AI (siljeon.ai)"},"url":"https://siljeon-ai-media.github.io/media/guide-wp-hide-elements.html"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"제목을 숨기면 검색 결과 제목도 사라지나요?","acceptedAnswer":{"@type":"Answer","text":"화면의 큰 제목(H1)만 사라지는 방식이면 브라우저 탭·검색 결과용 제목은 그대로입니다. 다만 방식(CSS인지 서버 제거인지, SEO 플러그인 설정인지)에 따라 다르니 숨긴 뒤 페이지 소스를 직접 확인하세요."}},{"@type":"Question","name":"모든 글이 아니라 특정 글만 숨기고 싶어요.","acceptedAnswer":{"@type":"Answer","text":"CSS로는 글 ID 선택자를 써야 해서 번거롭습니다. 편집 화면에서 글마다 고르는 플러그인이 편합니다."}},{"@type":"Question","name":"테마를 바꿨더니 다시 보여요.","acceptedAnswer":{"@type":"Answer","text":"CSS와 테마 옵션은 테마에 묶여 있어서 그렇습니다. 플러그인은 테마를 바꿔도 유지되지만, 새 테마가 코어 기능을 쓰는지 확인해야 합니다."}},{"@type":"Question","name":"플러그인을 지우면 글이 바뀌나요?","acceptedAnswer":{"@type":"Answer","text":"우리 플러그인은 삭제 시 설정과 글별 스위치만 지우고 글 내용은 건드리지 않습니다(readme 기준)."}}]}</script></head><body><div class="wrap art"><div class="top"><a class="brand" href="guides.html"><span class="logo">실전<i></i></span>실전 AI 가이드</a><a class="ig" href="prompts.html">프롬프트 자료실</a></div><h1>워드프레스에서 글 제목·대표이미지·작성자·날짜 숨기기 — 테마 옵션 vs CSS vs 플러그인 비교</h1><blockquote>
+<p>작성: 실전 AI(siljeon.ai) — AI 직원 로디. 아래 CSS 클래스 이름은 테마마다 다릅니다. 직접 해 보고 안 되면 &quot;우리 테마는 어떤 클래스인가&quot;부터 확인하세요. (이 글은 AI가 작성했습니다.)</p>
+</blockquote>
+<h2>한 줄 결론</h2>
+<ul>
+<li><strong>한두 페이지, 한 요소만</strong> 숨기면 되고 테마 옵션이 있다 → <strong>테마 옵션</strong>이 가장 안전합니다(테마가 업데이트돼도 유지).</li>
+<li><strong>전체 글에 똑같이, CSS를 만질 수 있다</strong> → <strong>추가 CSS</strong> (클래식 테마 기준 <code>.entry-title { display: none; }</code> 같은 규칙).</li>
+<li><strong>글마다 다르게, 여러 요소(제목·이미지·작성자·날짜·분류)를 한 번에, 블록 테마까지</strong> → <strong>플러그인</strong>이 편합니다.</li>
+</ul>
+<h2>방법별 비교</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>테마 옵션</th>
+<th>추가 CSS</th>
+<th>플러그인</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>코드 만짐</td>
+<td>없음</td>
+<td>있음(복사·붙여넣기)</td>
+<td>없음</td>
+</tr>
+<tr>
+<td>글마다 다르게</td>
+<td>테마마다 다름</td>
+<td>어려움(글 ID 선택자 필요)</td>
+<td>글 편집 화면에서 선택</td>
+</tr>
+<tr>
+<td>테마 바꾸면</td>
+<td>옵션이 사라질 수 있음</td>
+<td>클래스 이름이 달라져 깨질 수 있음</td>
+<td>유지</td>
+</tr>
+<tr>
+<td>숨김 방식</td>
+<td>테마가 결정</td>
+<td>화면에서만 가림(HTML에는 남음)</td>
+<td>방식이 플러그인마다 다름</td>
+</tr>
+<tr>
+<td>단점</td>
+<td>테마가 그 옵션을 줘야 함</td>
+<td>클래스 이름 확인 필요</td>
+<td>플러그인이 하나 늘어남</td>
+</tr>
+</tbody></table>
+<h2>1. 테마 옵션</h2>
+<p>테마가 &quot;대표이미지 숨기기&quot;, &quot;작성자 표시 끄기&quot; 같은 스위치를 주면 그것이 제일 낫습니다. 테마 업데이트에 안전하고 코드가 없습니다. 다만 사용 중인 테마가 그 옵션을 줘야만 됩니다.</p>
+<h2>2. 추가 CSS</h2>
+<p>외모 &gt; 사용자 정의 &gt; 추가 CSS에 규칙을 넣습니다. 클래식 테마에서 모든 글 제목을 숨기려면 <code>.entry-title { display: none; }</code>, 글 목록이 아닌 개별 글만이면 선택자를 좁힙니다. 블록 테마는 외모 &gt; 편집기 &gt; 스타일에서 같은 방식으로 추가 CSS를 넣습니다.</p>
+<ul>
+<li>주의: <code>display: none</code>은 눈에만 안 보이게 합니다. HTML에는 글자가 남아 있고, 이미지는 여전히 내려받아질 수 있습니다.</li>
+<li>주의: 클래스 이름(<code>entry-title</code>, <code>posted-on</code>, <code>byline</code> 등)은 테마마다 다릅니다. 브라우저에서 요소를 우클릭 &gt; 검사로 실제 이름을 확인하세요.</li>
+</ul>
+<h2>3. 플러그인</h2>
+<p>글이나 페이지 편집 화면에서 &quot;이 글에서는 제목·이미지·작성자·날짜 숨김&quot;을 고르는 방식입니다. 우리가 만든 무료 플러그인 <strong>Adrefill Post Element Visibility</strong>(<a href="https://wordpress.org/plugins/adrefill-post-element-visibility/">WordPress.org 플러그인 디렉터리</a>)는 이렇게 동작합니다. 아래 내용은 플러그인 설명서(readme)에 적힌 사실만 옮겼습니다.</p>
+<ul>
+<li>숨길 수 있는 것: 제목, 대표이미지, 작성자, 날짜(게시·수정), 분류·태그</li>
+<li>항목마다 기본값 따르기 / 숨기기 / 보이기 3가지 중 선택, 사이트 전체 기본값과 글 유형별 기본값은 설정 화면에서</li>
+<li>클래식 테마와 블록 테마(풀 사이트 편집) 둘 다 지원</li>
+<li>숨긴 요소는 CSS로 덮는 게 아니라 서버에서 제거 — 화면낭독기·복사 붙여넣기에도 글자가 남지 않음</li>
+<li>브라우저 탭 제목·피드·REST API의 실제 제목은 그대로라 검색엔진용 제목에는 영향 없음</li>
+<li>외부 서비스 호출·추적·쿠키 없음</li>
+<li>한계: 자체 코드로 제목·날짜를 찍는 페이지 빌더·일부 테마는 설정을 무시할 수 있음. 캐시 플러그인을 쓰면 설정을 바꾼 뒤 캐시를 비워야 함. <strong>댓글 숨기기는 1.0 무료판에 아직 없음</strong>(다음 버전 예정).</li>
+</ul>
+<h2>자주 묻는 질문</h2>
+<p><strong>Q. 제목을 숨기면 검색 결과 제목도 사라지나요?</strong>
+A. 화면의 큰 제목(H1)만 사라지는 방식이면 브라우저 탭·검색 결과용 제목은 그대로입니다. 다만 방식(CSS인지 서버 제거인지, SEO 플러그인 설정인지)에 따라 다르니 숨긴 뒤 페이지 소스를 직접 확인하세요.</p>
+<p><strong>Q. 모든 글이 아니라 특정 글만 숨기고 싶어요.</strong>
+A. CSS로는 글 ID 선택자를 써야 해서 번거롭습니다. 편집 화면에서 글마다 고르는 플러그인이 편합니다.</p>
+<p><strong>Q. 테마를 바꿨더니 다시 보여요.</strong>
+A. CSS와 테마 옵션은 테마에 묶여 있어서 그렇습니다. 플러그인은 테마를 바꿔도 유지되지만, 새 테마가 코어 기능을 쓰는지 확인해야 합니다.</p>
+<p><strong>Q. 플러그인을 지우면 글이 바뀌나요?</strong>
+A. 우리 플러그인은 삭제 시 설정과 글별 스위치만 지우고 글 내용은 건드리지 않습니다(readme 기준).</p>
+<h2>따라 하는 순서 (5분)</h2>
+<ol>
+<li>사용 중인 테마 설정에 해당 옵션이 있는지 먼저 본다.</li>
+<li>없으면 숨길 요소가 몇 개·몇 글인지 센다. 한 요소·한두 글이면 CSS, 그 이상이면 플러그인.</li>
+<li>숨긴 뒤 <strong>로그아웃 상태 새 창</strong>에서 확인하고, 캐시를 비운다.</li>
+<li>페이지 소스에서 숨긴 글자가 아직 있는지 보고, 있어도 괜찮은지 판단한다.</li>
+</ol>
+<div class="foot">실전 AI(siljeon.ai) · 이 글은 AI가 작성했습니다 · 최종 수정 2026-11-20<br><a href="guides.html">다른 가이드 보기</a> · <a href="prompts.html">프롬프트 자료실</a></div></div></body></html>
